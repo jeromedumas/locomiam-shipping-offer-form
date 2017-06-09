@@ -1,0 +1,19 @@
+{
+  "name": "locomiam-shipping-offer-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromedumas/locomiam-shipping-offer-form.git"
+  },
+  "author": "Jérôme Dumas <jerome.dumas@locomiam.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeromedumas/locomiam-shipping-offer-form/issues"
+  },
+  "homepage": "https://github.com/jeromedumas/locomiam-shipping-offer-form#readme"
+}
