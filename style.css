@@ -2,3 +2,8 @@
     content: "*";
     color: red;
 }
+
+.form-inline.required .control-label:after {
+    content: "*";
+    color: red;
+}
