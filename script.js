@@ -40,15 +40,47 @@ var expireAt = getParameterByName('expireAt');
 
 $(document).ready(function () {
 
+  // gestion de la section cachée
   if (partnerId && expireAt) {
+
+    // si les paramètres 'partnerId' et 'expireAt' sont correctement renseignés, alors on masque la section "#provider"
     if (partnerId == null || partnerId.length === 0) {
       console.error("Invalid value for parameter \'partnerId\'.")
     } else if (!ISO_8601_FULL.test(expireAt)) {
       console.error("Invalid value for parameter \'expireAt\'. Value must be a ISO 8601 Date (see https://www.w3.org/TR/NOTE-datetime).")
     } else {
       // les paramètres sont valides
-      $('#provider').show();
+      $('#provider').hide();
     }
+  }
+
+  var firstname = getParameterByName('firstname');
+  if (firstname) {
+    $('#firstname').val(firstname);
+  }
+  var lastname = getParameterByName('lastname');
+  if (lastname) {
+    $('#lastname').val(lastname);
+  }
+  var email = getParameterByName('email');
+  if (email) {
+    $('#email').val(email);
+  }
+  var tel = getParameterByName('tel');
+  if (tel) {
+    $('#tel').val(tel);
+  }
+  var address = getParameterByName('address');
+  if (address) {
+    $('#address').val(address);
+  }
+  var postal_code = getParameterByName('postal_code');
+  if (postal_code) {
+    $('#postal_code').val(postal_code);
+  }
+  var city = getParameterByName('city');
+  if (city) {
+    $('#city').val(city);
   }
 
 });
