@@ -9,11 +9,11 @@ Les paramètres ci-dessous sont nécessaires pour définir préalablement à l'o
 Parameter Name | Description
 -- | --
 partnerId | Identifiant du partenaire (fournit par LoCoMiam).
-expireAt | Date au format ISO 8601 (https://www.w3.org/TR/NOTE-datetime) de fin de validité de l'offre.
+partnerDeadline | Date au format ISO 8601 (https://www.w3.org/TR/NOTE-datetime) de fin de validité de l'offre.
 
 ### Exemple d'utilisation
 
-    index.html?partnerId=BestPartner&expireAt=2017-07-06T18:00:00.000Z
+    index.html?partnerId=BestPartner&partnerDeadline=2017-07-06T18:00:00.000Z
 
 
 ## Paramètres facultatifs

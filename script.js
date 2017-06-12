@@ -36,21 +36,21 @@ function getParameterByName(name, url) {
 }
 // Give the parameter a variable name
 var partnerId = getParameterByName('partnerId');
-var expireAt = getParameterByName('expireAt');
+var partnerDeadline = getParameterByName('partnerDeadline');
 
 $(document).ready(function () {
 
   // gestion de la section cachée
-  if (partnerId && expireAt) {
+  if (partnerId && partnerDeadline) {
 
     // si les paramètres 'partnerId' et 'expireAt' sont correctement renseignés, alors on masque la section "#provider"
     if (partnerId == null || partnerId.length === 0) {
       console.error("Invalid value for parameter \'partnerId\'.")
-    } else if (!ISO_8601_FULL.test(expireAt)) {
-      console.error("Invalid value for parameter \'expireAt\'. Value must be a ISO 8601 Date (see https://www.w3.org/TR/NOTE-datetime).")
+    } else if (!ISO_8601_FULL.test(partnerDeadline)) {
+      console.error("Invalid value for parameter \'partnerDeadline\'. Value must be a ISO 8601 Date (see https://www.w3.org/TR/NOTE-datetime).")
     } else {
       // les paramètres sont valides
-      $('#provider').hide();
+      $('#partner').hide();
     }
   }
 

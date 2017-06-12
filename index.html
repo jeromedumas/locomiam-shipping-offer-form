@@ -25,33 +25,32 @@
 
         <form role="form" data-toggle="validator" method="POST" accept-charset="utf-8">
 
-            <fieldset id="provider">
+            <fieldset id="partner">
                 <legend>Votre visite <span class="glyphicon glyphicon-info-sign icon_info" title="Texte d'explication ...."></span></legend>
 
                 <div class="form-group row required">
-                    <label class="col-lg-4 control-label">Nom du magasin</label>
+                    <label class="col-lg-4 control-label">Point de vente</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" id="store" placeholder="Nom du point de vente" required>
+                        <input class="form-control" type="text" name="partnerName" placeholder="Nom de l'enseigne" required>
                     </div>
                 </div>
-
 
                 <div class="form-group row required">
                     <label class="control-label col-md-4">Date de visite</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="date" required>
+                        <input class="form-control" type="date" name="partnerVisit" required>
                     </div>
                 </div>
 
             </fieldset>
 
-            <fieldset id="offer_details">
+            <fieldset>
                 <legend>Votre offre <span class="glyphicon glyphicon-info-sign icon_info" title="Texte d'explication ...."></span></legend>
 
                 <div class="form-group row">
                     <label for="sel1" class="col-lg-4 control-label">Nombre de commandes maximum</label>
                     <div class="col-lg-8">
-                        <select class="form-control" id="sel1" required>
+                        <select class="form-control" name="shipLimit" required>
                             <option value="1">1</option>
                             <option value="2" selected>2</option>
                             <option value="3" >3</option>
@@ -72,13 +71,13 @@
                     <label for="products_types" class="col-lg-4 control-label">Produits acceptés</label>
                     <div class="col-lg-8">
                         <div class="checkbox">
-                            <label><input type="checkbox" value="" checked>Fragiles (Exemples : oeufs, fraises)</label>
+                            <label><input type="checkbox" name="shipFragileItem" value="" checked>Fragiles (Exemples : oeufs, fraises)</label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="" checked>Lourds (>5 kg)</label>
+                            <label><input type="checkbox" name="shipHeavyItem" value="" checked>Lourds (>5 kg)</label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" value="" checked>Réfrigérés (Exemples : lait, viande, beurre)</label>
+                            <label><input type="checkbox" name="shipRefrigeratedItem" value="" checked>Réfrigérés (Exemples : lait, viande, beurre)</label>
                         </div>
                     </div>
                 </div>
@@ -91,13 +90,13 @@
                 <div class="form-group row required">
                     <label class="control-label col-md-4">Votre adresse</label>
                     <div class="col-md-4">
-                        <input class="form-control" id="address" type="text" placeholder="rue" required>
+                        <input class="form-control" id="address" name="address" type="text" placeholder="Rue et numéro de rue" required>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control " id="postal_code" type="number" placeholder="code postal" required>
+                        <input class="form-control " id="postal_code" name="postal_code" type="number" placeholder="Code postal" required>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-control" id="city" type="text" placeholder="ville" required>
+                        <input class="form-control" id="city" name="city" type="text" placeholder="Ville" required>
                     </div>
                 </div>
 
@@ -105,9 +104,9 @@
                     <label class="control-label col-md-4">Créneau de retrait des commandes</label>
                     <div class="col-md-8">
                         <div class="form-inline">
-                            <input class="form-control mr-sm-1" type="date" required> de
-                            <input class="form-control mr-sm-1" type="time" required> jusqu'à
-                            <input class="form-control mr-sm-1" type="time" required>
+                            <input class="form-control mr-sm-1" name="availableAtDate" type="date" required> de
+                            <input class="form-control mr-sm-1" name="availableFrom" type="time" required> jusqu'à
+                            <input class="form-control mr-sm-1" name="availableTo" type="time" required>
                         </div>
                     </div>
                 </div>
@@ -116,14 +115,14 @@
                     <label class="control-label col-md-4">Autres disponibilités (facultatif)</label>
                     <div class="col-md-8">
                         <div class="form-inline">
-                            <input class="form-control mr-sm-1" type="date"> de
-                            <input class="form-control mr-sm-1" type="time"> jusqu'à
-                            <input class="form-control mr-sm-1" type="time">
+                            <input class="form-control mr-sm-1" name="availableAtDate" type="date"> de
+                            <input class="form-control mr-sm-1" name="availableFrom" type="time"> jusqu'à
+                            <input class="form-control mr-sm-1" name="availableTo" type="time">
                         </div>
                         <div class="form-inline">
-                            <input class="form-control mr-sm-1" type="date"> de
-                            <input class="form-control mr-sm-1" type="time"> jusqu'à
-                            <input class="form-control mr-sm-1" type="time">
+                            <input class="form-control mr-sm-1" name="availableAtDate" type="date"> de
+                            <input class="form-control mr-sm-1" name="availableFrom" type="time"> jusqu'à
+                            <input class="form-control mr-sm-1" name="availableTo" type="time">
                         </div>
                     </div>
                 </div>
@@ -131,7 +130,7 @@
                 <div class="form-group row">
                     <label class="col-lg-4 control-label">Remarques</label>
                     <div class="col-lg-8">
-                        <textarea class="form-control" id="notes" placeholder="Instructions ou informations complémentaires que vous souhaitez communiquer."></textarea>
+                        <textarea class="form-control" id="notes" name="notes" placeholder="Instructions ou informations complémentaires que vous souhaitez communiquer."></textarea>
                     </div>
                 </div>
             </fieldset>
@@ -144,10 +143,10 @@
                     <label class="control-label col-md-4">Nom</label>
 
                     <div class="col-md-4">
-                        <input class="form-control" id="lastname" type="text" placeholder="Nom" required>
+                        <input class="form-control" id="lastname" name="lastname" type="text" placeholder="Nom" required>
                     </div>
                     <div class="col-md-4">
-                        <input class="form-control" id="firstname" type="text" placeholder="Prénom" required>
+                        <input class="form-control" id="firstname" name="firstname" type="text" placeholder="Prénom" required>
                     </div>
 
                 </div>
@@ -155,14 +154,15 @@
                 <div class="form-group row required">
                     <label class="col-lg-4 control-label">Email</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email" id="email" placeholder="adresse@email.com" required>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="adresse@email.com" required>
                     </div>
                 </div>
 
                 <div class="form-group row required">
                     <label class="col-lg-4 control-label">Téléphone</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="tel" id="tel" pattern="^0[1-9][0-9]{8}$" placeholder="06........" required>
+                        <input class="form-control" id="tel" name="tel" type="tel" pattern="^0[1-9][0-9]{8}$" placeholder="Téléphone mobile ou fixe"
+                            required>
                     </div>
                 </div>
 
