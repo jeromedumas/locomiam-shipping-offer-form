@@ -43,7 +43,7 @@ $(document).ready(function () {
   // gestion de la section cachée
   if (partnerId && partnerDeadline) {
 
-    // si les paramètres 'partnerId' et 'expireAt' sont correctement renseignés, alors on masque la section "#provider"
+    // si les paramètres 'partnerId' et 'partnerDeadline' sont correctement renseignés, alors on masque la section "#provider"
     if (partnerId == null || partnerId.length === 0) {
       console.error("Invalid value for parameter \'partnerId\'.")
     } else if (!ISO_8601_FULL.test(partnerDeadline)) {
@@ -51,6 +51,10 @@ $(document).ready(function () {
     } else {
       // les paramètres sont valides
       $('#partner').hide();
+
+      // définir la valeur les paramètres cachés du formulaire
+      $('#partnerId').val(partnerId);
+      $('#partnerDeadline').val(partnerDeadline);
     }
   }
 
@@ -83,4 +87,26 @@ $(document).ready(function () {
     $('#city').val(city);
   }
 
+
+  var shippingOfferForm = $("#shippingOfferForm");
+  shippingOfferForm.submit(function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: 'https://us-central1-locomiam-shipping-offers.cloudfunctions.net/shippingOffers',
+      data: $(this).serialize(),
+      type: 'POST',
+      crossDomain: true,
+      async: false,
+      beforeSend: function () {
+        shippingOfferForm.hide();
+      },
+      success: function (data) {
+        $("#succesMessage").show();
+      },
+      error: function (err) {
+        $("#errorMessage").show();
+      }
+    });
+  });
 });
