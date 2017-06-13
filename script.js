@@ -97,14 +97,17 @@ $(document).ready(function () {
       data: $(this).serialize(),
       type: 'POST',
       crossDomain: true,
-      async: false,
+      async: true,
       beforeSend: function () {
         shippingOfferForm.hide();
+        $("#sendingMessage").show();
       },
       success: function (data) {
-        $("#succesMessage").show();
+        $("#sendingMessage").hide();
+        $("#successMessage").show();
       },
       error: function (err) {
+        $("#sendingMessage").hide();
         $("#errorMessage").show();
       }
     });
