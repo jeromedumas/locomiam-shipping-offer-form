@@ -9,8 +9,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
 /**
  * RegExp to test a string for a full ISO 8601 Date
  * Does not do any sort of date validation, only checks if the string is according to the ISO 8601 spec.
@@ -20,9 +18,7 @@ firebase.initializeApp(config);
  * @see: https://www.w3.org/TR/NOTE-datetime
  * @type {RegExp}
  */
-var ISO_8601_FULL = /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?$/i
-
-
+var ISO_8601_FULL = "/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?$/i";
 
 // Parse the URL parameter
 function getParameterByName(name, url) {
