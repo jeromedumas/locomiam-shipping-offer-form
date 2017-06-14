@@ -34,4 +34,4 @@ city | Ville du point de retrait des commandes.
 
 ### Exemple d'utilisation
 
-    index.html?&partnerName=BestPartner&partnerVisit=2017-06-14&firstname=Jerome&lastname=Dumas&city=Nantes
+    index.html?partnerName=BestPartner&partnerVisit=2017-06-14&firstname=Jerome&lastname=Dumas&city=Nantes
