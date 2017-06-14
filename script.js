@@ -18,7 +18,7 @@ firebase.initializeApp(config);
  * @see: https://www.w3.org/TR/NOTE-datetime
  * @type {RegExp}
  */
-var ISO_8601_FULL = "/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?$/i";
+var ISO_8601_FULL = /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?$/i;
 
 // Parse the URL parameter
 function getParameterByName(name, url) {
