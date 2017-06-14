@@ -22,6 +22,8 @@ Les paramètres facultatifs ont pour objectif de faciliter le parcours de l'util
 
 Parameter Name | Description
 -- | --
+partnerName | Nom du partenaire ou du point de vente.
+partnerVisit | Date de visite du point de vente par l'utilisateur au format YYYY-MM-DD (= date de retrait de la commande).
 firstname | Prénom de l'utilisateur.
 lastname | Nom de l'utilisateur.
 email | Adresse email de l'utilisateur.
@@ -32,4 +34,4 @@ city | Ville du point de retrait des commandes.
 
 ### Exemple d'utilisation
 
-    index.html?firstname=Jerome&lastname=Dumas&city=Nantes
+    index.html?&partnerName=BestPartner&partnerVisit=2017-06-14&firstname=Jerome&lastname=Dumas&city=Nantes

@@ -20,6 +20,8 @@ firebase.initializeApp(config);
  */
 var ISO_8601_FULL = /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d+)?(([+-]\d\d:\d\d)|Z)?$/i;
 
+var DATE_FORMAT_YYYYMMDD = /^(19|20)\d\d(-)(0[1-9]|1[012])(-)(0[1-9]|[12][0-9]|3[01])$/;
+
 // Parse the URL parameter
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
@@ -33,25 +35,37 @@ function getParameterByName(name, url) {
 // Give the parameter a variable name
 var partnerId = getParameterByName('partnerId');
 var partnerDeadline = getParameterByName('partnerDeadline');
+var partnerName = getParameterByName('partnerName');
+var partnerVisit = getParameterByName('partnerVisit');
 
 $(document).ready(function () {
 
-  // gestion de la section cachée
+  // validation des paramètres cachés optionnels
   if (partnerId && partnerDeadline) {
-
-    // si les paramètres 'partnerId' et 'partnerDeadline' sont correctement renseignés, alors on masque la section "#provider"
+    // validation des paramètres 'partnerId' et 'partnerDeadline'
     if (partnerId == null || partnerId.length === 0) {
       console.error("Invalid value for parameter \'partnerId\'.")
-    } else if (!ISO_8601_FULL.test(partnerDeadline)) {
+    } else {
+      // définir la valeur du paramètres caché
+      $('#partnerId').val(partnerId);
+    }
+
+    if (!ISO_8601_FULL.test(partnerDeadline)) {
       console.error("Invalid value for parameter \'partnerDeadline\'. Value must be a ISO 8601 Date (see https://www.w3.org/TR/NOTE-datetime).")
     } else {
-      // les paramètres sont valides
-      $('#partner').hide();
-
-      // définir la valeur les paramètres cachés du formulaire
-      $('#partnerId').val(partnerId);
+      // définir la valeur du paramètres caché
       $('#partnerDeadline').val(partnerDeadline);
     }
+  }
+
+  if (partnerName && partnerName.trim().length != 0) {
+    $('#partnerName').val(partnerName);
+    $('#partnerName').prop('readonly', true);
+  }
+
+  if (partnerVisit && partnerVisit.trim().length != 0 && DATE_FORMAT_YYYYMMDD.test(partnerVisit)) {
+    $('#partnerVisit').val(partnerVisit);
+    $('#partnerVisit').prop('readonly', true);
   }
 
   var firstname = getParameterByName('firstname');
