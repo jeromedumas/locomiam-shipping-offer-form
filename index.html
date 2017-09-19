@@ -34,11 +34,9 @@
                     <span class="glyphicon glyphicon-ok"></span> <strong>Offre enregistrée avec succès</strong>
                     <hr class="message-inner-separator">
                     <p>
-                        Merci pour votre offre de livraison collaborative.
+                        Nous avons bien reçu votre offre de mutualisation de trajet. Nous vous remercions pour votre confiance.
                     </p>
-                    <p> Vous allez recevoir, dans quelques minutes, par email un récapitulatif de votre offre, et nous vous contacterons
-                        dès qu’un voisin l'aura sélectionnée.
-                    </p>
+                    <p> Votre offre va être relue, et vous recevrez un email de validation une fois votre offre en ligne.</p>
                 </div>
             </div>
         </div>
@@ -63,7 +61,7 @@
             <div class="jumbotron text-center">
                 <h1>Votre offre LoCoMiam</h1>
                 <p>&nbsp;</p>
-                <p>Merci de vouloir partager votre trajet avec vos voisins.</p>
+                <p>Merci d'annoncer votre trajet à vos voisins.</p>
                 <p>Veuillez remplir ces quelques informations pour soumettre votre offre collaborative.</p>
             </div>
 
@@ -88,7 +86,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Votre offre <span class="glyphicon glyphicon-info-sign icon_info" title="Indiquez le nombre et types de commandes que vous acceptez de collecter et de rapporter pour vos voisins. Chaque commande rapportée vous rapportera 3€."></span></legend>
+                <legend>Votre offre <span class="glyphicon glyphicon-info-sign icon_info" title="Indiquez le nombre et types de commandes que vous acceptez de collecter et de rapporter pour vos voisins."></span></legend>
 
                 <div class="form-group row required">
                     <span class="control-label col-md-4">Nombre de commandes maximum</span>
@@ -104,8 +102,15 @@
                 </div>
 
                 <div class="form-group row">
-                    <span class="control-label col-md-4">Indemnité reçue par commande</span>
-                    <span class="col-md-8">3 € (remis en main propre par la personne profitant de votre offre)</span>
+                    <span class="control-label col-md-4">Indemnité demandée par commande</span>
+                    <div class="col-md-8">
+                        <select class="form-control" name="compensation" required>
+                            <option value="0">0 € </option>
+                            <option value="2" >2 € (remis en main propre)</option>
+                            <option value="3" selected>3 € (remis en main propre)</option>
+                            <option value="4">4 € (remis en main propre)</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -217,8 +222,8 @@
 
                 <div class="form-group row required">
                     <div class="col-lg-12">
-                        <input class="form-control" id="tel" name="tel" type="tel" pattern="^0[1-9][0-9]{8}$" placeholder="Téléphone mobile ou fixe&#42;"
-                            required>
+                        <input class="form-control" id="phone" name="phone" type="tel" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"
+                            placeholder="Téléphone mobile ou fixe&#42;" required>
                     </div>
                 </div>
 
@@ -244,9 +249,6 @@
 
     <!-- Latest compiled and minified Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Include Firebase Library -->
-    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 
     <!-- Contacts Store JavaScript -->
     <script src="script.js"></script>

@@ -1,14 +1,3 @@
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAJKRLAGc_LF1ILyY6ilEVmnpAZR9CpCIA",
-  authDomain: "locomiam-shipping-offers.firebaseapp.com",
-  databaseURL: "https://locomiam-shipping-offers.firebaseio.com",
-  projectId: "locomiam-shipping-offers",
-  storageBucket: "locomiam-shipping-offers.appspot.com",
-  messagingSenderId: "1041222257094"
-};
-firebase.initializeApp(config);
-
 /**
  * RegExp to test a string for a full ISO 8601 Date
  * Does not do any sort of date validation, only checks if the string is according to the ISO 8601 spec.
@@ -80,9 +69,9 @@ $(document).ready(function () {
   if (email) {
     $('#email').val(email);
   }
-  var tel = getParameterByName('tel');
-  if (tel) {
-    $('#tel').val(tel);
+  var phone = getParameterByName('phone');
+  if (phone) {
+    $('#phone').val(phone);
   }
   var address = getParameterByName('address');
   if (address) {
@@ -103,7 +92,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     $.ajax({
-      url: 'https://us-central1-locomiam-shipping-offers.cloudfunctions.net/shippingOffers',
+      url: 'https://us-central1-prod-locomiam-app.cloudfunctions.net/shippingOffers',
       data: $(this).serialize(),
       type: 'POST',
       crossDomain: true,

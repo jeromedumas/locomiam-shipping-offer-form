@@ -27,7 +27,7 @@ partnerVisit | Date de visite du point de vente par l'utilisateur au format YYYY
 firstname | Prénom de l'utilisateur.
 lastname | Nom de l'utilisateur.
 email | Adresse email de l'utilisateur.
-tel | Numéro de téléphone de l'utilisateur.
+phone | Numéro de téléphone de l'utilisateur.
 address | Adresse (rue / lieu dit) du point de retrait des commandes.
 postal_code | Code postal du point de retrait des commandes.
 city | Ville du point de retrait des commandes.
